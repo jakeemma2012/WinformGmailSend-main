@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +33,7 @@ namespace WinformEmail
 
             if (isValidTyping())
             {
-                if (isValidEmail(txtGmailSend.Text.Trim()))
+                if (isValidEmail(Form2.stringGmail))
                 {
                     if (isValidEmail(txtEmail.Text.Trim()))
                     {
@@ -60,7 +61,7 @@ namespace WinformEmail
             try
             {
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress(txtGmailSend.Text.Trim());
+                mail.From = new MailAddress(Form2.stringGmail.Trim());
                 mail.To.Add(txtEmail.Text.Trim());
                 mail.Subject = txtCaption.Text;
                 mail.Body = txtMessage.Text;
@@ -68,7 +69,7 @@ namespace WinformEmail
                 SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = false;
-                smtpClient.Credentials = new NetworkCredential(txtGmailSend.Text.Trim(), txtAppPassword.Text);
+                smtpClient.Credentials = new NetworkCredential("laovanleuhoho@gmail.com", "dokt kayj hsqx xcvw");
 
                 smtpClient.Send(mail);
                 MessageBox.Show("Send SuccessFul to " + txtEmail.Text.Trim());
@@ -87,8 +88,6 @@ namespace WinformEmail
             {
                 setOnOffButton(true);
             }
-
-
         }
 
         bool isValidEmail(string inputEmail)
@@ -103,21 +102,47 @@ namespace WinformEmail
 
         bool isValidTyping()
         {
-            return txtEmail.Text.Trim() != "" && txtCaption.Text.Trim() != "" && txtMessage.Text.Trim() != ""
-                 && txtGmailSend.Text.Trim() != "" && txtAppPassword.Text.Trim() != "";
+            return txtEmail.Text.Trim() != "" && txtCaption.Text.Trim() != "" && txtMessage.Text.Trim() != "";
         }
 
         void setOnOffButton(bool typeset)
         {
-            txtGmailSend.Enabled = typeset;
-            txtAppPassword.Enabled = typeset;
-
             txtEmail.Enabled = typeset;
             txtCaption.Enabled = typeset;
             txtMessage.Enabled = typeset;
 
             btSend.Enabled = typeset;
+        }
 
+        string configStringConnectDTB = "Server=14.225.203.143;Database=jaki;User ID=root;Password=ZSYfN9YRBACa2Rnp;";
+        MySqlConnection conn = null;
+
+        void ConnectDTB()
+        {
+            conn = new MySqlConnection(configStringConnectDTB);
+            try
+            {
+                conn.Open();
+                MessageBox.Show("DataBase Has Get Ready !");
+            }
+            catch (Exception ex)
+            {
+                DialogResult rs = MessageBox.Show("Thiết lập máy chủ thất bại!\n Bạn có muốn thử kết nối lại không ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (rs == DialogResult.Yes)
+                {
+                    ConnectDTB();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+
+            }
+        }
+
+        private void btConnectDTB_Click_1(object sender, EventArgs e)
+        {
+            ConnectDTB();
         }
     }
 }
