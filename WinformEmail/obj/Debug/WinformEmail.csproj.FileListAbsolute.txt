@@ -1,0 +1,10 @@
+C:\Users\Jaki\Desktop\Exercise\Winform + DeTai\WinformEmail\WinformEmail\WinformEmail\bin\Debug\WinformEmail.exe.config
+C:\Users\Jaki\Desktop\Exercise\Winform + DeTai\WinformEmail\WinformEmail\WinformEmail\bin\Debug\WinformEmail.exe
+C:\Users\Jaki\Desktop\Exercise\Winform + DeTai\WinformEmail\WinformEmail\WinformEmail\bin\Debug\WinformEmail.pdb
+C:\Users\Jaki\Desktop\Exercise\Winform + DeTai\WinformEmail\WinformEmail\WinformEmail\obj\Debug\WinformEmail.csproj.AssemblyReference.cache
+C:\Users\Jaki\Desktop\Exercise\Winform + DeTai\WinformEmail\WinformEmail\WinformEmail\obj\Debug\WinformEmail.Form1.resources
+C:\Users\Jaki\Desktop\Exercise\Winform + DeTai\WinformEmail\WinformEmail\WinformEmail\obj\Debug\WinformEmail.Properties.Resources.resources
+C:\Users\Jaki\Desktop\Exercise\Winform + DeTai\WinformEmail\WinformEmail\WinformEmail\obj\Debug\WinformEmail.csproj.GenerateResource.cache
+C:\Users\Jaki\Desktop\Exercise\Winform + DeTai\WinformEmail\WinformEmail\WinformEmail\obj\Debug\WinformEmail.csproj.CoreCompileInputs.cache
+C:\Users\Jaki\Desktop\Exercise\Winform + DeTai\WinformEmail\WinformEmail\WinformEmail\obj\Debug\WinformEmail.exe
+C:\Users\Jaki\Desktop\Exercise\Winform + DeTai\WinformEmail\WinformEmail\WinformEmail\obj\Debug\WinformEmail.pdb
